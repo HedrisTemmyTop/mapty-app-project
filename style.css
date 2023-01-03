@@ -218,3 +218,30 @@ a:visited {
 .cycling-popup .leaflet-popup-content-wrapper {
   border-left: 5px solid var(--color-brand--1);
 }
+@media only screen and (max-width: 1000px) {
+  body {
+    display: block;
+    position: relative;
+    padding: 0;
+  }
+  .show {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    right: 0;
+    bottom: 0;
+    transition: 0.2s;
+    visibility: visible;
+    opacity: 1;
+    z-index: 1000;
+  }
+  .hide {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
+  }
+}

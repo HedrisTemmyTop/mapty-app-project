@@ -7,7 +7,7 @@ const inputDistance = document.querySelector('.form__input--distance');
 const inputDuration = document.querySelector('.form__input--duration');
 const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
-
+const sidebar = document.querySelector('.sidebar');
 class Workout {
   clicks = 0;
   date = new Date();
@@ -143,6 +143,8 @@ class App {
     });
   }
   _showForm(mapE) {
+    sidebar.classList.add('show');
+    sidebar.classList.remove('hide');
     this.#mapEvent = mapE;
 
     form.classList.remove('hidden');
@@ -170,6 +172,8 @@ class App {
   _newWorkout(e) {
     e.preventDefault();
     // Get data from form
+    sidebar.classList.remove('show');
+    sidebar.classList.add('hide');
     const validInput = (...inputs) =>
       inputs.every(input => Number.isFinite(input));
     const allPositive = function (...inputs) {
